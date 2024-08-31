@@ -1,0 +1,36 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+    public static boolean isprime(int val){
+        for(int div = 2; div < val; div++){
+            if(val%div == 0){
+                return false;
+            }
+        }
+        return true;
+        
+    }
+    public static void solution(ArrayList<Integer>a1){
+    
+       int last = a1.size() - 1;
+       for(int i = last; i >= 0; i-- ){
+           if(isprime(a1.get(i)) == true){
+               a1.remove(i);
+           }   
+       }
+
+    }
+    public static void main(String[] args){
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+        ArrayList<Integer>a1 = new ArrayList<>();
+        for(int i = 0; i < n; i++){
+            a1.add(scn.nextInt());
+        }
+        solution(a1);
+        System.out.println(a1);
+        
+    }
+}
+    
